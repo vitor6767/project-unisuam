@@ -40,12 +40,6 @@ e a responsividade do site.
 - CSS3
 - JavaScript (ajustes básicos)
 
-## Deploy
-
-O projeto está disponível online no seguinte link:
-
-👉 **[Link do projeto no Vercel aqui]**
-
 ## Observações
 
 Este projeto foi desenvolvido para fins acadêmicos e aprendizado,
