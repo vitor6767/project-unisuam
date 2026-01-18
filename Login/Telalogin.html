@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Login/login.css">
+    <title>Login | FioForte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+
+    <script src="../Login/login.js" defer></script>
+</head>
+<body>
+
+<!-- ===== NAVBAR GLOBAL ===== -->
+<header class="main-header">
+  <div class="container header-content">
+    <a href="../index.html" class="brand-logo">FioForte<span class="dot">.</span></a>
+    <input type="checkbox" id="menu-toggle" aria-controls="slide-menu-navigation" aria-expanded="false">
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+      <span class="hamburger"></span>
+    </label>
+    <nav class="slide-menu" id="slide-menu-navigation" role="navigation">
+      <ul role="menubar">
+        <li class="has-submenu" role="none"><a href="../MenuCompras/MenuProduto.html" role="menuitem" class="nav-link">Produtos ▾</a></li>
+        <li role="none"><a href="../Sobre/Sobrenos.html" role="menuitem" class="nav-link">Sobre</a></li>
+        <li role="none"><a href="Telalogin.html" role="menuitem" class="nav-link">Área do Cliente</a></li>
+        <li role="none"><a href="../Contatos/Contatos.html" role="menuitem" class="nav-link">Fale Conosco</a></li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+  </div>
+</header>
+
+<div id="toast-box">Usuário ou senha incorretos!</div>
+
+<div class="main-container">
+    <div class="login-card">
+        <div class="logo-area">
+            <a href="../"./index.html".html">
+                <img src="../Assets/logosemfundo.png" alt="FioForte Logo" 
+                     onerror="this.src='https://via.placeholder.com/150?text=FioForte'"> 
+            </a>
+            <h2>Bem-vindo de volta</h2>
+            <p>Acesse sua conta FioForte</p>
+        </div>
+
+        <form id="loginForm">
+            
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <div class="input-wrapper">
+                    <i class='bx bx-user icon'></i>
+                    <input type="text" id="username" placeholder="Seu nome de usuário" >
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <div class="input-wrapper">
+                    <i class='bx bx-lock-alt icon'></i>
+                    <input type="password" id="password" placeholder="Sua senha segura" >
+                    <i class='bx bx-show toggle-password' id="togglePassword"></i>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font-size: 0.9rem;">
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" id="rememberMe"> Lembrar de mim
+                </label>
+                <a href="#" style="color: var(--primary-color); font-weight: 600;">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="btn-primary">Entrar na Conta</button>
+
+            <div class="divider"><span>OU</span></div>
+
+            <a href="../register/register.html"><button type="button" class="btn-primary">Criar Nova Conta</button></a>
+        </form>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="container footer-flex">
+        <div class="footer-copy">
+            <p>&copy; 2025 FioForte. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

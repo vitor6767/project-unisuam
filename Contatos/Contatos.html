@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FioForte | Contatos</title>
+  <link rel="stylesheet" href="Contatos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+
+  <script src="contatos.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../Assets/logosemfundo.png" alt="FioForte Logo">
+      </a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <label for="menu-toggle" class="hamburger">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <nav class="nav-links">
+      
+      <a href="../index.html">Início</a>
+      <a href="../Contatos/Contatos.html">Fale Conosco</a>
+      <a href="../Sobre/Sobrenos.html">Sobre</a>
+      <a href="../Login/Telalogin.html">Área do Cliente</a>
+      
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fale com a FioForte</h1>
+    <p>Estamos prontos para transformar sua autoestima. Entre em contato para agendamentos, dúvidas ou parcerias.</p>
+  </section>
+
+  <div class="container">
+    
+    <h2 class="section-title">Canais de Atendimento</h2>
+
+    <div class="contact-grid">
+      
+      <div class="contact-card">
+        <div class="icon-box"><i class="fab fa-instagram"></i></div>
+        <h3>Instagram</h3>
+        <p>Siga nossas novidades</p>
+        <a href="https://www.instagram.com/" target="_blank" class="btn-contact">Acessar Perfil</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Atendimento rápido</p>
+        <a href="https://api.whatsapp.com/" target="_blank" class="btn-contact">Enviar Mensagem</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+        <h3>Facebook</h3>
+        <p>Faça parte da comunidade</p>
+        <a href="https://www.facebook.com/" target="_blank" class="btn-contact">Ver Página</a>
+      </div>
+
+    </div>
+
+    <section id="email-form">
+  <h2 class="section-title">Envie um e-mail</h2>
+  <div class="form-wrapper">
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" id="nome" placeholder="Seu Nome Completo">
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Seu E-mail">
+      </div>
+      <div class="form-group">
+        <input type="tel" id="telefone" placeholder="Seu Telefone (Opcional)">
+      </div>
+      <div class="form-group">
+        <textarea id="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+
+  </div>
+
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-copy">
+                <p>&copy; 2025 FioForte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

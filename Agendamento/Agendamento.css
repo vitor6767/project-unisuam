@@ -1,0 +1,395 @@
+/* --- VARIÁVEIS & RESET (Mesmo padrão do Contatos) --- */
+:root {
+  --primary: #0f172a;
+  --gold: #d4af37;
+  --text: #334155;
+  --bg-light: #f1f5f9;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --bg-white: #ffffff;
+  --transition: all 0.3s ease;
+  --dot: #bfa15f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body {
+  background-color: var(--bg-light);
+  color: var(--text);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+html { overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* --- HEADER (Consistência Visual) --- */
+.main-header {
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -1px;
+}
+
+.brand-logo img {
+  height: 45px;
+  width: auto;
+  filter: brightness(2)
+          drop-shadow(0 0 3px #fff)
+          drop-shadow(0 0 5px #fff)
+          drop-shadow(0 0 8px #fff);
+  transition: none;
+}
+
+.dot {
+  color: var(--dot);
+}
+
+.slide-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .slide-menu {
+    display: block;
+    position: static;
+    background: none;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .slide-menu ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary);
+    transition: var(--transition);
+  }
+
+  .nav-link:hover {
+    color: var(--dot);
+  }
+
+  .menu-btn,
+  #menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #menu-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    top: 15px;
+    z-index: 1003;
+  }
+
+  .menu-btn {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1004;
+  }
+
+  .hamburger {
+    width: 26px;
+    height: 3px;
+    background: var(--primary);
+    position: relative;
+    transition: 0.3s;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    width: 26px;
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  .hamburger::before { top: -8px; }
+  .hamburger::after  { top: 8px; }
+
+  .slide-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: var(--bg-white);
+    z-index: 1001;
+    padding-top: 70px;
+    transition: 0.35s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .slide-menu ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    gap: 5px;
+    list-style: none;
+  }
+
+  .slide-menu li {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .slide-menu a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  #menu-toggle:checked ~ nav.slide-menu { right: 0; }
+
+  #menu-toggle:checked ~ .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu-btn .hamburger {
+    background: transparent;
+  }
+
+  #menu-toggle:checked + .menu-btn .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  #menu-toggle:checked + .menu-btn .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.main-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Lado esquerdo menor, formulário maior */
+  gap: 4rem;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* --- LADO ESQUERDO (Informações) --- */
+.info-side h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight { color: var(--gold); }
+
+.info-text { margin-bottom: 2rem; font-size: 1.05rem; }
+
+.benefits-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.benefits-list i {
+  color: var(--gold);
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* --- LADO DIREITO (Formulário Card) --- */
+.booking-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border-top: 5px solid var(--gold);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-header { margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+.form-header h2 { color: var(--primary); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas dentro do form */
+  gap: 1.5rem;
+}
+
+.full-width { grid-column: span 2; }
+
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.input-group input, .input-group select, .input-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+  background: #f8fafc;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-submit:hover { background: var(--gold); color: var(--primary); transform: translateY(-2px); }
+
+/* toast*/
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #dc2626;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Para telas menores que 900px */
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .info-side {
+    text-align: center;
+    order: -1;
+  }
+
+  .benefits-list {
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+/* Para telas menores que 600px */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width { grid-column: span 1; }
+
+  .booking-card {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+}

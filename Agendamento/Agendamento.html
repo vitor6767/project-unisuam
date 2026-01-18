@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FioForte | Agendamento Online</title>
+  <link rel="stylesheet" href="Agendamento.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+
+  <!-- Script funcional do hamburger e validações -->
+  <script src="../Agendamento/agendamento.js" defer></script>
+
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-content">
+        <a href="../index.html" class="brand-logo"><img src="../Assets/logosemfundo.png" alt="FioForte Logo"></a>
+
+        <input type="checkbox" id="menu-toggle" aria-controls="slide-menu-navigation" aria-expanded="false">
+        <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+            <span class="hamburger"></span>
+        </label>
+
+        <nav class="slide-menu" id="slide-menu-navigation" role="navigation">
+            <ul role="menubar">
+                <li><a href="../index.html" class="nav-link">Início</a></li>
+                <li><a href="../Sobre/Sobrenos.html" class="nav-link">Sobre Nós</a></li>
+                <li><a href="../Contatos/Contatos.html" class="nav-link">Fale Conosco</a></li>
+                <li><a href="../Login/Telalogin.html" class="nav-link">Área do Cliente</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay"></div>
+    </div>
+  </header>
+
+  <div id="toast" class="toast"></div>
+
+  <div class="main-container">
+    
+    <aside class="info-side">
+      <h1>Seu novo visual começa <span class="highlight">aqui.</span></h1>
+      <p class="info-text">
+        Não deixe para depois a confiança que você pode ter hoje. Nossos especialistas estão prontos para realizar uma avaliação detalhada do seu caso.
+      </p>
+      
+      <ul class="benefits-list">
+        <li><i class="fas fa-check-circle"></i> Especialistas em transplante FUE</li>
+        <li><i class="fas fa-check-circle"></i> Primeira avaliação gratuita</li>
+        <li><i class="fas fa-check-circle"></i> Protocolos exclusivos de crescimento</li>
+        <li><i class="fas fa-clock"></i> Atendimento pontual e privativo</li>
+      </ul>
+
+      <div style="margin-top: 2rem; background: #fff; padding: 1rem; border-radius: 8px; display: inline-block; border: 1px solid #ddd;">
+        <p style="font-size: 0.9rem; color: #666;">Prefere agendar pelo telefone?</p>
+        <p style="font-weight: bold; color: var(--primary); font-size: 1.2rem;">
+          <i class="fab fa-whatsapp" style="color:green"></i> (21) 90000-0000
+        </p>
+      </div>
+    </aside>
+
+    <main class="booking-card">
+      <div class="form-header">
+        <h2>Reserve seu Horário</h2>
+        <p style="color: #64748b; font-size: 0.9rem;">Preencha os dados abaixo para confirmar sua visita.</p>
+      </div>
+
+      <form action="#" method="POST" >
+        <div class="form-grid">
+          
+          <div class="input-group full-width">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Ex: João Silva" red
+                   pattern="[A-Za-zÀ-ú\s]+"
+                   title="Por favor, insira apenas letras."
+                   id="nomeCompleto">
+          </div>
+
+          <div class="input-group">
+            <label>WhatsApp / Celular</label>
+            <input type="tel" placeholder="(DD) 90000-0000" red
+                   pattern="\d{11}" 
+                   title="Por favor, insira apenas números. Ex: 21000000000"
+                   id="whatsapp">
+          </div>
+
+          <div class="input-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" >
+          </div>
+
+          <div class="input-group full-width">
+            <label>Tipo de Serviço</label>
+            <select >
+              <option value="" selected disabled>Selecione uma opção...</option>
+              <option value="avaliacao">Avaliação Transplante (Gratuito)</option>
+              <option value="corte">Corte & Barba Premium</option>
+              <option value="tratamento">Protocolo de Crescimento</option>
+              <option value="domicilio">Atendimento a Domicílio</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Data Preferida</label>
+            <input type="date" id="dateInput"  min="1900-01-01" max="2030-12-31">
+          </div>
+
+          <div class="input-group">
+            <label>Horário</label>
+            <input type="time" min="09:00" max="19:00" >
+            <small style="color: #888; font-size: 0.7rem; margin-top:2px;">Funcionamos das 09h às 19h</small>
+          </div>
+
+          <div class="input-group full-width">
+            <label>Observações (Opcional)</label>
+            <textarea rows="3" placeholder="Tem alguma preferência ou dúvida específica?"></textarea>
+          </div>
+
+          <div class="full-width">
+            <button type="submit" class="btn-submit">
+              Confirmar Agendamento <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </main>
+  </div>
+
+     <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-copy">
+                <p>&copy; 2025 FioForte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+  </footer>
+
+  
+</body>
+</html>

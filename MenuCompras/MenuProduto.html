@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fio Care - Menu de Produtos</title>
+    <link rel="stylesheet" href="MenuProduto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+    
+              <!-- Script -->
+    <script src="MenuProduto.js" defer></script>
+</head>
+<body>
+
+    <!-- === NAVBAR (DO LOBBY) COM AJUSTE DE ALTURA E ALINHAMENTO === -->
+    <header class="main-header">
+        <div class="container header-content">
+
+            <!-- LOGO -->
+            <a href="../index.html" class="brand-logo">FioForte<span class="dot"></span></a>
+
+            <!-- MENU TOGGLE (MOBILE) -->
+            <input type="checkbox" id="menu-toggle" aria-controls="slide-menu-navigation" aria-expanded="false">
+
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+                <span class="hamburger"></span>
+            </label>
+            
+            <!-- MENU LATERAL -->
+            <nav class="slide-menu" id="slide-menu-navigation" role="navigation">
+                <ul role="menubar">
+                    <li class="has-submenu" role="none">
+                        <a href="#produtos" role="menuitem" class="nav-link">Produtos ▾</a>
+                    </li>
+                    <li role="none"><a href="../Sobre/Sobrenos.html" role="menuitem" class="nav-link">Sobre</a></li>
+                    <li role="none"><a href="../Login/Telalogin.html" role="menuitem" class="nav-link">Área do Cliente</a></li>
+                    <li role="none"><a href="../Contatos/Contatos.html" role="menuitem" class="nav-link">Fale Conosco</a></li>
+                </ul>
+            </nav>
+
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- === HEADER DA SEÇÃO DE PRODUTOS (SEGUNDO HEADER AJUSTADO PELO CSS) === -->
+    <header>
+        <h1>Fio Forte</h1>
+        <p class="subtitle">Tônicos de Alta Performance & Cuidados para Barba</p>
+    </header>
+
+    <!-- === FILTROS === -->
+    <nav class="filters">
+        <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+        <button class="filter-btn" onclick="filterProducts('tonico')">Tônicos Capilares</button>
+        <button class="filter-btn" onclick="filterProducts('barba')">Linha Barba</button>
+    </nav>
+
+    <!-- === GRID DE PRODUTOS === -->
+    <div class="container">
+        <div class="products-grid" id="product-grid"></div>
+    </div>
+
+    <!-- === RODAPÉ === -->
+    <footer>
+        <p>&copy; 2025 FioForte. Todos os direitos reservados.</p>
+    </footer>
+
+
+
+</body>
+</html>

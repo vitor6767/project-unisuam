@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FioForte | Produtos Premium e Serviços Capilares</title>
+    <meta name="description" content="FioForte oferece produtos premium para crescimento capilar, barba e serviços profissionais como Transplante Capilar.">
+    <meta name="keywords" content="FioForte, produtos capilares, barba, transplante capilar">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./Inicio/Lobby.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+    
+    <script src="./Inicio/Lobby.js" defer></script>
+
+
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+
+            <a href="#" class="brand-logo">FioForte<span class="dot">.</span></a>
+
+            <!-- Checkbox corrigido -->
+            <input type="checkbox" id="menu-toggle" aria-controls="slide-menu-navigation" aria-expanded="false">
+
+            <!-- Botão do menu corrigido -->
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+                <span class="hamburger"></span>
+            </label>
+            
+            <!-- MENU MOBILE/DESKTOP -->
+            <nav class="slide-menu" id="slide-menu-navigation" role="navigation">
+                <ul role="menubar">
+                    <li class="has-submenu" role="none">
+                        <a href="#produtos" role="menuitem" class="nav-link">Produtos ▾</a>
+                    </li>
+                    <li role="none"><a href="../Sobre/Sobrenos.html" role="menuitem" class="nav-link">Sobre</a></li>
+                    <li role="none"><a href="../Login/Telalogin.html" role="menuitem" class="nav-link">Área do Cliente</a></li>
+                    <li role="none"><a href="../Contatos/Contatos.html" role="menuitem" class="nav-link">Fale Conosco</a></li>
+                </ul>
+            </nav>
+
+            <!-- Overlay funcional -->
+            <div class="overlay"></div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <img src="../Assets/logosemfundo.png" alt="FioForte Logo" class="hero-logo-img">
+                <h1>Beleza e confiança em cada fio</h1>
+                <p>A união perfeita entre ciência avançada e ingredientes naturais para a sua melhor versão.</p>
+                <div class="cta-group">
+                    <a href="#produtos" class="cta-button primary">Ver Produtos</a>
+                    <a href="#servicos" class="cta-button secondary">Agendar Avaliação</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="diferenciais section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Por que escolher a FioForte?</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="grid-3">
+                    <article class="card diferencial-card">
+                        <div class="icon">🔬</div>
+                        <h3>Ciência Comprovada</h3>
+                        <p>Fórmulas desenvolvidas em laboratório com eficácia testada.</p>
+                    </article>
+                    <article class="card diferencial-card">
+                        <div class="icon">👨‍⚕️</div>
+                        <h3>Suporte Especializado</h3>
+                        <p>Acompanhamento com tricologistas parceiros da marca.</p>
+                    </article>
+                    <article class="card diferencial-card">
+                        <div class="icon">🛡️</div>
+                        <h3>Garantia de Resultado</h3>
+                        <p>Satisfação garantida ou acompanhamento revisado.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="produtos section-padding bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nossos Best-Sellers</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="grid-3">
+                    <article class="card produto-card" id="tonico">
+                        <div class="img-holder">
+                            <img src="../Assets/tonicocapilar.png" alt="Tônico Capilar" onerror="this.style.display='none'">
+                            <span class="badge">Mais Vendido</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Tônico Ultra-Forte</h3>
+                            <p>Estimula o crescimento e fortalece a raiz.</p>
+                            <a href="../MenuCompras/MenuProduto.html" class="btn-buy">Comprar Agora</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card produto-card" id="barba">
+                        <div class="img-holder">
+                            <img src="../Assets/modelador.png" alt="Modelador" onerror="this.style.display='none'">
+                        </div>
+                        <div class="card-body">
+                            <h3>Óleo Premium Barba</h3>
+                            <p>Hidratação profunda sem deixar oleoso.</p>
+                            <a href="../MenuCompras/MenuProduto.html" class="btn-buy">Comprar Agora</a>
+                        </div>
+                    </article>
+
+                    <article class="card produto-card" id="kits">
+                        <div class="img-holder">
+                            <img src="../Assets/kittotal.png" alt="Kit Completo" onerror="this.style.display='none'">
+                            <span class="badge promo">Oferta</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Kit Cuidado Total</h3>
+                            <p>O arsenal completo para o homem moderno.</p>
+                            <a href="../MenuCompras/MenuProduto.html" class="btn-buy">Comprar Agora</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="servicos section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Serviços Clínicos</h2>
+                    <p>Procedimentos realizados em nossa clínica parceira.</p>
+                    <div class="separator"></div>
+                </div>
+                
+                <div class="grid-3 servicos-grid">
+                    <div class="servico-item">
+                        <h4>Transplante FUE</h4>
+                        <p>Técnica fio a fio minimamente invasiva.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h4>Mesoterapia</h4>
+                        <p>Vitaminas injetadas diretamente no couro cabeludo.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h4>Laserterapia</h4>
+                        <p>Estimulação dos folículos via luz de baixa potência.</p>
+                    </div>
+                </div>
+                
+                <div class="center-btn">
+                    <a href="../Agendamento/Agendamento.html" class="cta-button primary">Agendar Consulta Diagnóstica</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato section-padding bg-dark">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <form action="/submit-contact-form" method="POST" class="form-grid" id="contactForm">
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo" >
+                    <input type="email" name="email" id="email" placeholder="E-mail" >
+                    <textarea name="mensagem" id="mensagem" rows="4" placeholder="Sua mensagem..." ></textarea>
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                </form>
+            </div>
+            <!-- toast-->
+             <div id="toast"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-flex">
+            <div class="footer-copy">
+                <p>&copy; 2025 FioForte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

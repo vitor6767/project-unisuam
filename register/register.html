@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | FioForte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../register/register.css">
+
+  <!-- Favicon -->
+    <link rel="icon" href="../Assets/logosemfundo.png" type="image/x-icon">
+
+  <script src="register.js" defer></script>
+</head>
+<body>
+
+<!-- ===== NAVBAR GLOBAL ===== -->
+<header class="main-header">
+  <div class="container header-content">
+    <a href="../index.html" class="brand-logo">FioForte<span class="dot">.</span></a>
+    <input type="checkbox" id="menu-toggle" aria-controls="slide-menu-navigation" aria-expanded="false">
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+      <span class="hamburger"></span>
+    </label>
+    <nav class="slide-menu" id="slide-menu-navigation" role="navigation">
+      <ul role="menubar">
+        <li class="has-submenu" role="none"><a href="../MenuCompras/MenuProduto.html" role="menuitem" class="nav-link">Produtos ▾</a></li>
+        <li role="none"><a href="../Sobre/Sobrenos.html" role="menuitem" class="nav-link">Sobre</a></li>
+        <li role="none"><a href="../Login/Telalogin.html" role="menuitem" class="nav-link">Área do Cliente</a></li>
+        <li role="none"><a href="../Contatos/Contatos.html" role="menuitem" class="nav-link">Fale Conosco</a></li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+  </div>
+</header>
+
+<div id="toast-box"></div>
+
+<div class="main-container">
+  <div class="login-card"> 
+    <div class="logo-area">
+      <img src="../Assets/logosemfundo.png" alt="logosemfundo">
+      <h2>Crie sua conta</h2>
+      <p>Preencha seus dados para se cadastrar</p>
+    </div>
+
+    <form id="registerForm">
+      <div class="input-group">
+        <label for="nome">Nome Completo</label>
+        <div class="input-wrapper">
+          <i class='bx bx-id-card icon'></i>
+          <input type="text" id="nome" maxlength="60">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="nomeMaterno">Nome Materno</label>
+        <div class="input-wrapper">
+          <i class='bx bx-female icon'></i>
+          <input type="text" id="nomeMaterno" maxlength="60">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="usuario">Usuário</label>
+        <div class="input-wrapper">
+          <i class='bx bx-user icon'></i>
+          <input type="text" id="usuario" maxlength="15">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <i class='bx bx-envelope icon'></i>
+          <input type="email" id="email" maxlength="80">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="telefone">Telefone Fixo</label>
+        <div class="input-wrapper">
+          <i class='bx bx-phone icon'></i>
+          <input type="tel" id="telefone" maxlength="14" placeholder="(11) 1234-5678">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="genero">Gênero</label>
+        <select id="genero">
+          <option value="">Selecione</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>Outro</option>
+          <option>Prefiro não informar</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <div class="input-wrapper">
+          <i class='bx bx-calendar icon'></i>
+         <input type="date" id="dataNascimento" name="dataNascimento" min="1900-01-01" max="2026-01-01">
+       </div>
+      </div>
+
+      <div class="input-group">
+        <label for="cep">CEP</label>
+        <div class="input-wrapper">
+          <i class='bx bx-map icon'></i>
+          <input type="text" id="cep" maxlength="9" placeholder="00000-000">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="rua">Rua / Avenida</label>
+        <div class="input-wrapper">
+          <i class='bx bx-road icon'></i>
+          <input type="text" id="rua" maxlength="80">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="numero">Número</label>
+        <div class="input-wrapper">
+          <i class='bx bx-hash icon'></i>
+          <input type="text" id="numero" maxlength="6">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="cidade">Cidade</label>
+        <div class="input-wrapper">
+          <i class='bx bx-buildings icon'></i>
+          <input type="text" id="cidade" maxlength="40">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="estado">Estado (UF)</label>
+        <div class="input-wrapper">
+          <i class='bx bx-map-alt icon'></i>
+          <input type="text" id="estado" maxlength="2" placeholder="UF" style="text-transform: uppercase;">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <div class="input-wrapper">
+          <i class='bx bx-lock-alt icon'></i>
+          <input type="password" id="senha" minlength="6" maxlength="20">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="confirmarSenha">Confirmar Senha</label>
+        <div class="input-wrapper">
+          <i class='bx bx-lock-alt icon'></i>
+          <input type="password" id="confirmarSenha" minlength="6" maxlength="20">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Criar Conta</button>
+      <a href="../Login/Telalogin.html" class="btn-primary">Já tenho conta</a>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>
